@@ -1,0 +1,33 @@
+## Defaults
+variable "product" {
+  default = "snl-automation"
+}
+variable "component" {
+  default = "sds"
+}
+variable "location" {
+  default = "UK South"
+}
+variable "env" {}
+variable "subscription" {
+  default = ""
+}
+variable "deployment_namespace" {
+  default = ""
+}
+variable "common_tags" {
+  type = map(string)
+}
+variable "team_name" {
+  default = "SNL Automation"
+}
+variable "team_contact" {
+  default = "#list-assist-qa-builds"
+}
+
+## KV Details
+variable "active_directory_group" {
+  type        = string
+  description = "Active Directory Group Name"
+  default     = "DTS SDS Developers"
+}

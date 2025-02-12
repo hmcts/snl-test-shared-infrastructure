@@ -1,0 +1,11 @@
+#!groovy
+@Library("Infrastructure")
+
+def product = "snl-automation"
+def component = "bootstrap"
+
+def branchesToSync = ['demo', 'perftest', 'ithc']
+
+withInfraPipeline(product, component) {
+ syncBranchesWithMaster(branchesToSync)
+}
