@@ -22,7 +22,7 @@ module "kv" {
   product                 = var.product
   env                     = var.env
   object_id               = var.jenkins_AAD_objectId
-  resource_group_name     = azurerm_resource_group.rg.name
+  resource_group_name     = azurerm_resource_group[0].rg.name
   product_group_name      = var.active_directory_group
   common_tags             = var.common_tags
   create_managed_identity = false
