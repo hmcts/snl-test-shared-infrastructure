@@ -1,7 +1,7 @@
 locals {
   prefix              = "${var.product}-bootstrap-${var.env}"
   resource_group_name = "${local.prefix}-rg"
-  key_vault_name      = "${local.prefix}-kv"
+  key_vault_name      = "${var.product}-bts-${var.env}"
   env_long_name       = var.env == "sbox" ? "sandbox" : var.env == "stg" ? "staging" : var.env
 }
 
