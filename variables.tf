@@ -19,7 +19,10 @@ variable "common_tags" {
   type = map(string)
 }
 variable "team_name" {
-  default = "SNL Automation Test"
+  default = "SNL Automation"
+}
+variable "team_contact" {
+  default = "#list-assist-qa-builds"
 }
 
 ## KV Details
