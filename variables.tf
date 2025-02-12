@@ -1,6 +1,6 @@
 ## Defaults
 variable "product" {
-  default = "snl"
+  default = "snl-automation"
 }
 variable "component" {
   default = "sds"
