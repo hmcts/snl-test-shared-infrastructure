@@ -1,6 +1,5 @@
 #!groovy
-//noinspection GroovyUnusedAssignment
-@Library("Infrastructure") _
+@Library("Infrastructure")
 
 def product = "snl-automation"
 def component = "bootstrap"
