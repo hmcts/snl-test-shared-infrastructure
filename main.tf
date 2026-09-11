@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "rg" {
 
 module "kv" {
   count                   = var.env == "stg" ? 1 : 0
-  source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
+  source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access"
   name                    = local.key_vault_name
   product                 = var.product
   env                     = var.env
