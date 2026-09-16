@@ -15,13 +15,19 @@ resource "azurerm_resource_group" "rg" {
   tags     = var.common_tags
 }
 
+data "azurerm_user_assigned_identity" "jenkins" {
+  name                = "jenkins-${var.env}-mi"
+  resource_group_name = "managed-identities-${var.env}-rg"
+}
+
 module "kv" {
   count                   = var.env == "stg" ? 1 : 0
-  source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
+  source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access"
   name                    = local.key_vault_name
   product                 = var.product
   env                     = var.env
   object_id               = var.jenkins_AAD_objectId
+  jenkins_object_id       = data.azurerm_user_assigned_identity.jenkins.principal_id
   resource_group_name     = azurerm_resource_group.rg[0].name
   product_group_name      = var.active_directory_group
   common_tags             = var.common_tags
